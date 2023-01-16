@@ -43,6 +43,16 @@ while (idade < 15) or (idade > 150):
 
 Mtmb = 66+(13.8*peso)+(5*altura)-(6.8-idade)
 Ftmb = 655+(9.6*peso)+(1.8*altura)-(4.7-idade)
+Ftmb1 = Ftmb*1.2
+Ftmb2 = Ftmb*1.37
+Ftmb3 = Ftmb*1.55
+Ftmb4 = Ftmb*1.72
+Ftmb5 = Ftmb*1.9
+Mtmb1 = Mtmb*1.2
+Mtmb2 = Mtmb*1.37
+Mtmb3 = Mtmb*1.55
+Mtmb4 = Mtmb*1.72
+Mtmb5 = Mtmb*1.9
 
 sexo = (input('\nMasculino\nFeminino\nDigite seu genero:\n'))
 while (sexo != 'masculino') and (sexo != 'feminino'):
@@ -51,35 +61,27 @@ atividade = int(input('\n[1]Sedentário\n[2]Ativo\n[3]Pouco ativo\n[4]Muito ativ
 while (atividade <1) and (atividade >5):
     atividade = int(input('Essa opção não existe\nEscolha novamente:\n'))
 if (atividade == 1) and (sexo == "masculino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.2,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Mtmb1:.2f}kcal')
 elif (atividade == 2) and (sexo == "masculino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.37,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Mtmb2:.2f}kcal')
 elif (atividade == 3) and (sexo == "masculino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.55,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Mtmb3:.2f}kcal')
 elif (atividade == 4) and (sexo == "masculino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.72,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Mtmb4:.2f}kcal')
 elif (atividade == 5) and (sexo == "masculino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.9,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Mtmb5:.2f}kcal')
 elif (atividade == 1) and (sexo == "feminino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.2,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Ftmb1:.2f}kcal')
 elif (atividade == 2) and (sexo == "feminino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.37,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Ftmb2:.2f}kcal')
 elif (atividade == 3) and (sexo == "feminino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.55,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Ftmb3:.2f}kcal')
 elif (atividade == 4) and (sexo == "feminino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.72,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Ftmb4:.2f}kcal')
 elif (atividade == 5) and (sexo == "feminino"):
-    print('sua taxa de metabolismo basal do seu dia a dia é de', Ftmb*1.9,'kcal')
+    print(f'sua taxa de metabolismo basal do seu dia a dia é de {Ftmb5:.2f}kcal')
 else:
-    print('Ocorreu um erro!')
-
-
-
-
-
-
-#print(f'{nome}, {peso}kg, {altura}cm de altura, {idade} anos, {sexo} e Seu nivel de atividade é: {atividade}')
-
+    print('Ops, ocorreu um erro!')
 
 
 
