@@ -1,7 +1,7 @@
 nome = input('Digite seu nome: ')
 sexo = input("Informe seu sexo (M/F): ")
-while (sexo !='m') and (sexo !='f'):
-    sexo = input('Sexo deve ser "m" Masculino/"f" Feminino, Digite novamente (minusculo): ')
+while sexo !='m' and sexo != 'M' and sexo != 'F' and sexo !='f':
+    sexo = input('Sexo deve ser "M" Masculino/"F" Feminino, Digite novamente: ')
 while True:
     idade = int(input("Informe sua idade: "))
     if idade > 15 and idade < 100:
@@ -31,7 +31,7 @@ while True:
         break
     else:
         atividade = input('Digite de 4, 5 ou 6 refeições: ')
-if sexo == "M":
+if sexo == "M" or "m":
     tmb = (66+(13.8*peso)+(5*altura)-(6.8-idade))*0.85
 else:
     tmb = (655+(9.6*peso)+(1.8*altura)-(4.7-idade))*0.85
@@ -65,21 +65,21 @@ gordura = gordura/ref
 gordurak = gordura*9
 
 print(f"\n{nome} sua necessidade diária para o emagrecimento é de {tmbAtv:.2f}kcal")
-print(f"Você deve consumir cerca de {prot:.2f}g/{protk:.2f}kcal de proteína por refeição,")
-print(f"Você deve consumir cerca de {carb:.2f}g/{carbk:.2f}kcal de carboidratos por refeição,")
-print(f"Você deve consumir cerca de {gordura:.2f}g/{gordurak:.2f}kcal de gordura por refeição.\n")
-print(f'''Escolha uma das 3 opções de Protreina, uma das 3 de Carboidratos e uma das 2 de Gordura para cada refeição:
+print(f"Você deve consumir cerca de {prot:.2f}g /{protk:.2f}kcal de proteína por refeição,")
+print(f"Você deve consumir cerca de {carb:.2f}g/ {carbk:.2f}kcal de carboidratos por refeição,")
+print(f"Você deve consumir cerca de {gordura:.2f}g/ {gordurak:.2f}kcal de gordura por refeição.\n")
+print(f'''Escolha uma das 3 opções de Protreina, uma das 3 opções de Carboidratos e uma das 2 opções de Gordura para cada refeição:
 
 Proteina:
-[1]-{frango:.0f}g de frango ou
-[2]-{ovo:.0f} claras de ovos ou
-[3]-{patinho:.0f}g de patinho.
+[1]-{frango/ref:.0f}g de frango ou
+[2]-{ovo/ref:.0f} claras de ovos ou
+[3]-{patinho/ref:.0f}g de patinho.
         
 Carboidrato:
-[1]-{arroz:.0f}g de arroz branco ou
-[2]-{batata:.0f}g de batata doce cozida ou
-[3]-{mandioca:.0f}g de mandioca.
+[1]-{arroz/ref:.0f}g de arroz branco ou
+[2]-{batata/ref:.0f}g de batata doce cozida ou
+[3]-{mandioca/ref:.0f}g de mandioca.
         
 Gordura:
-[1]-{azeite:.0f} colhere(s) de azeite de oliva extravirgem ou
-[2]-{castanha:.0f}g de castanha do Pará.''')
+[1]-{azeite/ref:.0f} colhere(s) de azeite de oliva extravirgem ou
+[2]-{castanha/ref:.0f}g de castanha do Pará.''')
