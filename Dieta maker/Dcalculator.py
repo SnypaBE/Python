@@ -1,4 +1,3 @@
-
 nome = str(input('Olá, Digite seu nome: '))
 print (f'Olá {nome}, vamos montar sua dieta para perda de peso!\nPara calcular sua taxa de matabolismo basal responda o questionário.')
 peso = int(input(f'{nome} Digite seu peso em Kg:\n'))
@@ -15,7 +14,6 @@ while (idade < 15) or (idade > 150):
         idade = int(input('Idade nao pode ser maior que 150 anos.\nDigite novamente:\n'))
     else:
         idade = int(input('Valor inválido.\nDigite novamente:\n'))
-
 Mtmb = 66+(13.8*peso)+(5*altura)-(6.8-idade)
 Ftmb = 655+(9.6*peso)+(1.8*altura)-(4.7-idade)
 Ftmb1 = Ftmb*1.2
@@ -39,17 +37,12 @@ prot = ((peso*1.3)*4)/ref       #((peso*1.3 = gramas de proteina/dia) |*4 = tran
 frango = (prot/4)*3.7
 ovo = (prot/4)*0.34
 patinho = (prot/4)*3.44
-
-
-
 sexo = (input('\nMasculino\nFeminino\nDigite seu genero:\n'))
 while (sexo != 'masculino') and (sexo != 'feminino'):
     sexo = (input("Genero inválido.\nDigite novamente:\n"))
-
 atividade = int(input('\n[1]Sedentário\n[2]Ativo\n[3]Pouco ativo\n[4]Muito ativo\nQual seu nivel de atividade?\n'))
 while (atividade <1) and (atividade >4):
     atividade = int(input('Essa opção não existe\nEscolha novamente:\n'))
-
 if (atividade == 1) and (sexo == "masculino"):
     print(f'sua taxa de metabolismo basal do seu dia a dia é de {Mtmb1:.2f}kcal\n')         
     carbo1 = ((Mresult1-prot*4)*0.6)/ref 
@@ -59,10 +52,8 @@ if (atividade == 1) and (sexo == "masculino"):
     mandioca = (carbo1/4)*2.63
     azeite = int((gord1/9)*0.08)
     castanha = (gord1/9)*1.51
-
     while (ref <4) or (ref >6):
-        ref = int(input('Valor tem que ser de 4 a 6 refeições por dia.\nDigite novamente:\n'))
-        
+        ref = int(input('Valor tem que ser de 4 a 6 refeições por dia.\nDigite novamente:\n'))        
     if ref == 4:        
         print(f'''Sua dieta é de {Mresult1/ref:.2f}kcal por refeição:
 {prot:.2f}kcal de proteina,
