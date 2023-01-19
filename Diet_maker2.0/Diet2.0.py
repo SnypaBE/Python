@@ -1,6 +1,6 @@
 nome = input('Digite seu nome: ')
 sexo = input("Informe seu sexo (M/F): ")
-while (sexo !='M') and (sexo !='F'):
+while (sexo !='m') and (sexo !='f'):
     sexo = input('Sexo deve ser "m" Masculino/"f" Feminino, Digite novamente (minusculo): ')
 while True:
     idade = int(input("Informe sua idade: "))
@@ -15,7 +15,7 @@ while peso <30 or peso >300:
     peso = float(input('Valor inválido, digite novamente: '))
 while True:
     altura = float(input("Informe sua altura (em cm): "))
-    if altura <100:
+    if altura >100:
         break
     else:
         print('Valor tem que ser maior que 100cm, digite novamente: ')
@@ -24,20 +24,17 @@ while True:
     if atividade == 'sedentario' or atividade == 'ativo' or atividade == 'muito ativo' or atividade == 'pouco ativo':
         break
     else:
-        atividade = input('Digite corretamente')
+        atividade = input('Digite corretamente: ')
 while True:
     ref = int(input("Informe quantas refeições diarias deseja fazer? (de 4 a 6): "))
     if ref >=4 and ref <=6:
         break
     else:
         atividade = input('Digite de 4, 5 ou 6 refeições: ')
-# Calcula o metabolismo basal
 if sexo == "M":
     tmb = (66+(13.8*peso)+(5*altura)-(6.8-idade))*0.85
 else:
     tmb = (655+(9.6*peso)+(1.8*altura)-(4.7-idade))*0.85
-
-# Calcula o gasto calórico total
 if atividade == "sedentario":
     tmbAtv = tmb*1.2
 elif atividade == "pouco ativo":
@@ -48,13 +45,9 @@ elif atividade == "muito ativo":
     tmbAtv = tmb*1.9
 else:
     print('Algo deu errado.')
-
-# Calcula a necessidade diária de proteína
 prot = peso*1.5
-
-# Calcula a necessidade diária de carboidratos e gordura
 carb = (tmbAtv-(prot*4))*0.6/4
-gordura = (tmbAtv-(prot * 4))*0.4/9
+gordura = (tmbAtv-(prot*4))*0.4/9
 frango = (prot)*3.7
 ovo = (prot)*0.34
 patinho = (prot)*3.44
@@ -64,7 +57,6 @@ mandioca = ((carb)*2.63)
 azeite = int(((gordura)*0.08))
 castanha = ((gordura)*1.51)
 
-# Divide o resultado diário pelo número de refeições escolhido pelo usuário
 prot = prot/ref
 protk = prot*4
 carb = carb/ref
@@ -72,11 +64,10 @@ carbk = carb*4
 gordura = gordura/ref
 gordurak = gordura*9
 
-# Imprime o resultado
-print(f"{nome} sua necessidade diária para o emagrecimento é de {tmbAtv:.2f}kcal")
-print(f"Você deve consumir cerca de {prot:.2f}g/{protk:.2f}kcal de proteína por refeição")
-print(f"Você deve consumir cerca de {carb:.2f}g/{carbk:.2f}kcal de carboidratos por refeição")
-print(f"Você deve consumir cerca de {gordura:.2f}g/{gordurak:.2f} de gordura por refeição")
+print(f"\n{nome} sua necessidade diária para o emagrecimento é de {tmbAtv:.2f}kcal")
+print(f"Você deve consumir cerca de {prot:.2f}g/{protk:.2f}kcal de proteína por refeição,")
+print(f"Você deve consumir cerca de {carb:.2f}g/{carbk:.2f}kcal de carboidratos por refeição,")
+print(f"Você deve consumir cerca de {gordura:.2f}g/{gordurak:.2f}kcal de gordura por refeição.\n")
 print(f'''Escolha uma das 3 opções de Protreina, uma das 3 de Carboidratos e uma das 2 de Gordura para cada refeição:
 
 Proteina:
