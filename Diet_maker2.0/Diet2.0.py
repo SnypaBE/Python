@@ -2,35 +2,21 @@ nome = input('Digite seu nome: ')
 sexo = input("Informe seu sexo (M/F): ")
 while sexo !='m' and sexo != 'M' and sexo != 'F' and sexo !='f':
     sexo = input('Sexo deve ser "M" Masculino/"F" Feminino, Digite novamente: ')
-while True:
-    idade = int(input("Informe sua idade: "))
-    if idade > 15 and idade < 100:
-        break
-    elif idade < 15:
-        print('idade não pode ser menor que 15 anos. Tente novamente: ')
-    else:
-        print('idade não pode ser maior que 100 anos. Tente novamente: ')
+idade = int(input("Informe sua idade: "))
+while idade < 15 or idade > 100:
+    idade = int(input('Idade deve ser maior que 15 anos e menor que 100. Digite novamente: '))
 peso = float(input("Informe seu peso (em kg): "))
 while peso <30 or peso >300:
     peso = float(input('Valor inválido, digite novamente: '))
-while True:
-    altura = float(input("Informe sua altura (em cm): "))
-    if altura >100:
-        break
-    else:
-        print('Valor tem que ser maior que 100cm, digite novamente: ')
-while True:
-    atividade = input("Informe seu nível de atividade (sedentario, pouco ativo, ativo, muito ativo): ")
-    if atividade == 'sedentario' or atividade == 'ativo' or atividade == 'muito ativo' or atividade == 'pouco ativo':
-        break
-    else:
-        atividade = input('Digite corretamente: ')
-while True:
-    ref = int(input("Informe quantas refeições diarias deseja fazer? (de 4 a 6): "))
-    if ref >=4 and ref <=6:
-        break
-    else:
-        atividade = input('Digite de 4, 5 ou 6 refeições: ')
+altura = int(input("Informe sua altura (em cm): "))
+while altura < 80 or altura > 300:
+    altura = int(input('Valor inválido, digite novamente: '))
+atividade = input("Informe seu nível de atividade (sedentario, pouco ativo, ativo, muito ativo): ")
+while atividade != 'sedentario' and atividade != 'ativo' and atividade != 'muito ativo' and atividade != 'pouco ativo':
+    atividade = input('Digite corretamente: ')
+ref = int(input('Informe quantas refeições diarias deseja fazer? (de 4 a 6): '))
+while ref < 4 or ref > 6:
+    ref = int(input("O número de refeições devem ser de 4 a 6, digite novamente: "))
 if sexo == "M" or "m":
     tmb = (66+(13.8*peso)+(5*altura)-(6.8-idade))*0.85
 else:
