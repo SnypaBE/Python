@@ -1,4 +1,8 @@
 nome = input('Digite seu nome: ')
+objetivo = input('Qual a sua meta(emagrecer/ganhar peso?: ')
+while objetivo != 'emagrecer' and objetivo != 'ganhar peso':
+    objetivo = input('Digite novamente com letra minuscula: ')
+meta = objetivo
 sexo = input("Informe seu sexo (M/F): ")
 while sexo !='m' and sexo != 'M' and sexo != 'F' and sexo !='f':
     sexo = input('Sexo deve ser "M" Masculino/"F" Feminino, Digite novamente: ')
@@ -17,10 +21,14 @@ while atividade != 'sedentario' and atividade != 'ativo' and atividade != 'muito
 ref = int(input('Informe quantas refeições diarias deseja fazer? (de 4 a 6): '))
 while ref < 4 or ref > 6:
     ref = int(input("O número de refeições devem ser de 4 a 6, digite novamente: "))
-if sexo == "M" or "m":
-    tmb = (66+(13.8*peso)+(5*altura)-(6.8-idade))*0.85
+if objetivo == 'emagrecer':
+    objetivo = 0.85
 else:
-    tmb = (655+(9.6*peso)+(1.8*altura)-(4.7-idade))*0.85
+    objetivo = 1.2
+if sexo == "M" or "m":
+    tmb = (66+(13.8*peso)+(5*altura)-(6.8-idade))*objetivo
+else:
+    tmb = (655+(9.6*peso)+(1.8*altura)-(4.7-idade))*objetivo
 if atividade == "sedentario":
     tmbAtv = tmb*1.2
 elif atividade == "pouco ativo":
@@ -50,10 +58,11 @@ carbk = carb*4
 gordura = gordura/ref
 gordurak = gordura*9
 
-print(f"\n{nome} sua necessidade diária para o emagrecimento é de {tmbAtv:.2f}kcal")
-print(f"Você deve consumir cerca de {prot:.2f}g /{protk:.2f}kcal de proteína por refeição,")
-print(f"Você deve consumir cerca de {carb:.2f}g/ {carbk:.2f}kcal de carboidratos por refeição,")
-print(f"Você deve consumir cerca de {gordura:.2f}g/ {gordurak:.2f}kcal de gordura por refeição.\n")
+print(f"\n{nome} sua necessidade diária para {meta} é de {tmbAtv:.2f}kcal.")
+print(f'Você escolheu {ref} refeições.')
+print(f"Você deve consumir cerca de {prot:.2f}g /{protk:.2f}kcal de proteína em cada refeição,")
+print(f"Você deve consumir cerca de {carb:.2f}g/ {carbk:.2f}kcal de carboidratos em cada refeição,")
+print(f"Você deve consumir cerca de {gordura:.2f}g/ {gordurak:.2f}kcal de gordura em cada refeição.\n")
 print(f'''Escolha uma das 3 opções de Protreina, uma das 3 opções de Carboidratos e uma das 2 opções de Gordura para cada refeição:
 
 Proteina:
